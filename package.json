@@ -1,0 +1,21 @@
+{
+  "name": "mouseguard",
+  "author": "Spenser Haddad",
+  "license": "MIT",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A system for playing the Mouseguard system in Foundry Virtual Tabletop.",
+  "scripts": {
+    "build": "gulp build"
+  },
+  "dependencies": {
+    "foundry-pc-types": "gitlab:foundry-projects/foundry-pc/foundry-pc-types"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.4",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  }
+}
