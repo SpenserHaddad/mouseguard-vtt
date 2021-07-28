@@ -8,10 +8,8 @@
   "scripts": {
     "build": "gulp build"
   },
-  "dependencies": {
-    "foundry-pc-types": "gitlab:foundry-projects/foundry-pc/foundry-pc-types"
-  },
   "devDependencies": {
+    "@league-of-foundry-developers/foundry-vtt-types": "^0.8.8-8",
     "@types/node": "^16.4.4",
     "gulp": "^4.0.2",
     "gulp-typescript": "^6.0.0-alpha.1",

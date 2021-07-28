@@ -6,7 +6,7 @@
     "compilerOptions": {
         "types": [
             "node",
-            "foundry-pc-types"
+            "@league-of-foundry-developers/foundry-vtt-types"
         ],
         "noImplicitAny": true,
         "moduleResolution": "node",
