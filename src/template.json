@@ -1,0 +1,288 @@
+{
+    "Actor": {
+        "types": [
+            "character",
+            "npc",
+            "creature"
+        ],
+        "templates": {},
+        "character": {
+            "background": {
+                "age": {
+                    "value": 18,
+                    "min": 0,
+                    "max": 50
+                },
+                "home": {
+                    "value": ""
+                },
+                "furColor": {
+                    "value": ""
+                },
+                "guardRank": {
+                    "value": ""
+                },
+                "cloakColor": {
+                    "value": ""
+                },
+                "parents": {
+                    "value": []
+                },
+                "artisan": {
+                    "value": ""
+                },
+                "mentor": {
+                    "value": ""
+                },
+                "friend": {
+                    "value": ""
+                },
+                "enemy": {
+                    "value": ""
+                }
+            },
+            "rewards": {
+                "fatePoints": {
+                    "value": 0,
+                    "min": 0
+                },
+                "personaPoints": {
+                    "value": 0,
+                    "min": 0
+                }
+            },
+            "characteristics": {
+                "belief": {
+                    "value": ""
+                },
+                "goal": {
+                    "value": ""
+                },
+                "instinct": {
+                    "value": ""
+                }
+            },
+            "abilities": {
+                "nature": {
+                    "value": 1,
+                    "min": 0,
+                    "max": 1,
+                    "passes": {
+                        "value": 0,
+                        "total": 6
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 5
+                    }
+                },
+                "will": {
+                    "value": 1,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 5
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 4
+                    }
+                },
+                "health": {
+                    "value": 1,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 5
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 4
+                    }
+                },
+                "resources": {
+                    "value": 0,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 9
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 9
+                    }
+                },
+                "circles": {
+                    "value": 0,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 9
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 9
+                    }
+                }
+            },
+            "wises": {
+                "value": []
+            },
+            "skills": {
+                "fighter": {
+                    "value": 0,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 5
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 5
+                    }
+                },
+                "healer": {
+                    "value": 0,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 5
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 5
+                    }
+                },
+                "hunter": {
+                    "value": 0,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 5
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 5
+                    }
+                },
+                "instructor": {
+                    "value": 0,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 5
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 5
+                    }
+                },
+                "pathfinder": {
+                    "value": 0,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 5
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 5
+                    }
+                },
+                "scout": {
+                    "value": 0,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 5
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 5
+                    }
+                },
+                "survivalist": {
+                    "value": 0,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 5
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 5
+                    }
+                },
+                "weatherWatcher": {
+                    "value": 0,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 5
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 5
+                    }
+                },
+                "manipulator": {
+                    "value": 0,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 5
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 5
+                    }
+                },
+                "orator": {
+                    "value": 0,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 5
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 5
+                    }
+                },
+                "persuader": {
+                    "value": 0,
+                    "min": 0,
+                    "passes": {
+                        "value": 0,
+                        "total": 5
+                    },
+                    "fails": {
+                        "value": 0,
+                        "total": 5
+                    }
+                }
+            },
+            "customSkills": [],
+            "conditions": {
+                "value": []
+            },
+            "traits": [
+                {
+                    "name": "Sample Trait",
+                    "level": {
+                        "value": 0,
+                        "min": 0,
+                        "max": 3
+                    },
+                    "usedForSelf": false,
+                    "usedAgainstSelf": {
+                        "value": 0,
+                        "min": 0,
+                        "max": 6
+                    }
+                }
+            ]
+        }
+    },
+    "Item": {}
+}
