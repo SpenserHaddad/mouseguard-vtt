@@ -42,6 +42,14 @@
 .sheet-body .tab,
 .sheet-body .tab .editor {
   height: 100%;
+
+  .label {
+    text-align: left;
+  }
+
+  input.background-input {
+    text-align: center
+  };
 }
 
 .tox {
