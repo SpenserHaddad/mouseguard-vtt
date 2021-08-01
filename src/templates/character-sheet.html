@@ -1,0 +1,23 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+    {{!-- Sheet Header --}}
+    <header class="sheet-header flexrow">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+        <div class="header-fields">
+
+            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Guard Name" </h1>
+
+        </div>
+    </header>
+    <section class="sheet-body">
+        <h1>Backgound Info</h1>
+        <div class="bio grid grid-2col">
+            {{#each data.background as |bgInfo key|}}
+            <div class="bio flexrow">
+                <label for="data.background.{{key}}.value" class="resource-label">{{bgInfo.label}}: </label>
+                <input class="background-input" type="text" name="data.background.{{key}}.value"
+                    value="{{bgInfo.value}}" />
+            </div>
+            {{/each}}
+        </div>
+    </section>
+</form>
