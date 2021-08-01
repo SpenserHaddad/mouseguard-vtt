@@ -1,0 +1,13 @@
+{
+    "MOUSEGUARD.NameStr": "Name",
+    "MOUSEGUARD.AgeStr": "Age",
+    "MOUSEGUARD.HomeStr": "Home",
+    "MOUSEGUARD.FurColorStr": "Fur Color",
+    "MOUSEGUARD.GuardRankStr": "Guard Rank",
+    "MOUSEGUARD.CloakColorStr": "Cloak Color",
+    "MOUSEGUARD.ParentsStr": "Parents",
+    "MOUSEGUARD.ArtisanStr": "Senior Artisan",
+    "MOUSEGUARD.MentorStr": "Mentor",
+    "MOUSEGUARD.FriendStr": "Friend",
+    "MOUSEGUARD.EnemyStr": "Enemy"
+}
