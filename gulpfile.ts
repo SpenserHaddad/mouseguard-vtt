@@ -57,6 +57,8 @@ gulp.task('build', gulp.parallel('compile', 'css', 'copy'));
 // This is supposed to copy the dist folder into the modules directory for testing. Only works if you've set it up the right way
 const MODULEPATH = process.env.FOUNDRY_DATA
 gulp.task('foundry', () => {
-    return gulp.src('dist/**').pipe(gulp.dest(`${MODULEPATH}/systems/mouseguard`))
+    if (process.env.FOUNDRY_DATA) {
+        return gulp.src('dist/**').pipe(gulp.dest(`${MODULEPATH}/systems/mouseguard`))
+    }
 })
 gulp.task("update", gulp.series('build', 'foundry'))
