@@ -9,6 +9,9 @@
     "esmodules": [
         "module/mouseguard.js"
     ],
+    "styles": [
+        "css/mouseguard.css"
+    ],
     "gridDistance": 5,
     "gridUnits": "ft",
     "languages": [
