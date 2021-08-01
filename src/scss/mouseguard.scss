@@ -1,5 +1,19 @@
 // Add custom fonts by visiting and search https://fonts.google.com
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'TiePoloStd-Book' ;
+  src: url('../fonts/TiePoloStd/TiepoloStd-Book.otf');
+}
+
+@font-face {
+  font-family: 'TiePoloStd-Black' ;
+  src: url('../fonts/TiePoloStd/TiepoloStd-Black.otf');
+}
+
+@font-face {
+  font-family: 'HobbyHorseNF';
+  src: url('../fonts/hobbyhorse/HobbyHorseNF.otf');
+}
 
 // Import utilities.
 @import 'utils/typography';
@@ -13,7 +27,7 @@
 @import 'global/flex';
 
 /* Styles limited to boilerplate sheets */
-.boilerplate {
+.mouseguard {
   @import 'components/forms';
   @import 'components/resource';
   @import 'components/items';
