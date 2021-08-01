@@ -41,6 +41,7 @@ gulp.task('copy', async () => {
         gulp.src('README.md').pipe(gulp.dest("dist/"))
         gulp.src("src/system.json").pipe(gulp.dest("dist/"))
         gulp.src("src/template.json").pipe(gulp.dest("dist/"))
+        gulp.src("src/fonts/**").pipe(gulp.dest("dist/fonts/"))
         gulp.src("src/lang/**").pipe(gulp.dest("dist/lang/"))
         gulp.src("src/module/**").pipe(gulp.dest("dist/module/"))
         gulp.src("src/packs/**").pipe(gulp.dest("dist/packs/"))
@@ -54,7 +55,6 @@ gulp.task('build', gulp.parallel('compile', 'css', 'copy'));
 
 
 // This is supposed to copy the dist folder into the modules directory for testing. Only works if you've set it up the right way
-//This works if development path is FoundryVTT/Data/dev/modules/swade-item-macros
 const MODULEPATH = process.env.FOUNDRY_DATA
 gulp.task('foundry', () => {
     return gulp.src('dist/**').pipe(gulp.dest(`${MODULEPATH}/systems/mouseguard`))
