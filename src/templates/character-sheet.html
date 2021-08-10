@@ -8,9 +8,20 @@
 
         </div>
     </header>
+
+    {{!-- Sheet Tabs --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="main">Main</a>
+        <a class="item" data-tab="background">Background</a>
+    </nav>
+
+    {{!-- Background Tab --}}
     <section class="sheet-body">
-        <h1>Backgound Info</h1>
-        <div class="bio grid grid-2col">
+        <div class="tab main" data-tab="main">
+            <h1>Hi</h1>
+        </div>
+
+        <div class="tab background" data-tab="background">
             {{#each data.background as |bgInfo key|}}
             <div class="bio flexrow">
                 <label for="data.background.{{key}}.value" class="resource-label">{{bgInfo.label}}: </label>
