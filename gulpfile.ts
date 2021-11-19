@@ -60,5 +60,9 @@ gulp.task('foundry', () => {
     if (process.env.FOUNDRY_DATA) {
         return gulp.src('dist/**').pipe(gulp.dest(`${MODULEPATH}/systems/mouseguard`))
     }
+    else {
+        console.log("FOUNDRY_DATA not set. Provide a path as either an envvar or in a .env file to automatically update a Foundry directory.")
+        return gulp.src(".")
+    }
 })
 gulp.task("update", gulp.series('build', 'foundry'))
