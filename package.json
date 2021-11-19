@@ -6,14 +6,17 @@
   "version": "0.0.1",
   "description": "A system for playing the Mouseguard system in Foundry Virtual Tabletop.",
   "scripts": {
-    "build": "gulp build"
+    "build": "gulp build",
+    "update": "gulp update"
   },
   "devDependencies": {
     "@league-of-foundry-developers/foundry-vtt-types": "^0.8.8-8",
     "@types/node": "^16.4.4",
     "dotenv": "^10.0.0",
     "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-sass": "^5.0.0",
     "sass": "^1.36.0",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
