@@ -26,10 +26,113 @@
 @import 'global/grid';
 @import 'global/flex';
 
+$border-groove: 2px groove #eeede0;
+
 /* Styles limited to boilerplate sheets */
 .mouseguard {
   @import 'components/forms';
   @import 'components/resource';
   @import 'components/items';
   @import 'components/effects';
+}
+
+.mouseguard ul.abilities {
+  flex: 0 0 175px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: $border-groove;
+
+  li.ability-entry {
+    text-align: center;
+    border: $border-groove;
+    // border-radius: 4px;
+  }
+  
+  h3.ability-title {
+    text-align: center;
+    font-weight: bold;
+    margin: 4px 8px;
+    border-bottom: 1px solid #c9c7b8;
+  }
+  
+  input.ability-value {
+    margin: 0px 5px 0px 2px;
+    max-width: 48px;
+    font-size: large;
+    text-align: center;
+    background: none;
+    border-top: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-right: $border-groove;
+  }
+}
+
+.mouseguard .advancements {
+    input.advancement-value {
+      flex: none;
+      font-size: small;
+      width: 1em;
+      height: 1em;
+    }
+
+    span.advancement-label {
+      flex: none;
+      font-size: small;
+      width: 3em;
+      text-align: left;
+    }
+
+    span.advancement-label-short {
+      flex: none;
+      font-size: small;
+      width: 1em;
+      text-align: left;
+    }
+
+    span.advancement-sep {
+      flex: none;
+      font-size: small;
+      width: 1em;
+      height: 1em;
+    }
+
+    span.advancement-total {
+      flex: none;
+      font-size: small;
+      width: 1em;
+      height: 1em;
+    }
+}
+
+.mouseguard ul.skills {
+  flex: 0 0 200px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li.skill-entry {
+    text-align: center;
+    border: $border-groove;
+    border-radius: 4px;
+  }
+
+  span.skill-title {
+    text-align: center;
+    top: 50%;
+    margin: 2px 4px;
+    // border-bottom: 1px solid #c9c7b8;
+  }
+
+  input.skill-value {
+    margin: 0px 2px 0px 2px;
+    max-width: 32px;
+    text-align: center;
+    background: none;
+    border-top: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-right: $border-groove;
+  }
 }

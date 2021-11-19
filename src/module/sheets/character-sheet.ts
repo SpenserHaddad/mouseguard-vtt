@@ -35,11 +35,21 @@ export class MouseguardActorSheet extends ActorSheet {
 
         const actorData = actor.data._source.data;
         const background = actorData.background;
+        const abilities = actorData.abilities;
+        const skills = actorData.skills;
 
         // Add metadata about character traits
         for (let [bgPropName, bgProp] of Object.entries(background)) {
             console.log(`Setting label for ${bgPropName}`);
             bgProp.label = game.i18n.localize(MouseGuardConfig.background[bgPropName]);
+        }
+
+        for (let [abPropName, abProp] of Object.entries(abilities)) {
+            abProp.label = game.i18n.localize(MouseGuardConfig.abilities[abPropName]);
+        }
+
+        for (let [skillPropName, skillProp] of Object.entries(skills)) {
+            skillProp.label = game.i18n.localize(MouseGuardConfig.skills[skillPropName]);
         }
 
         // Add the actor's data to context.data for easier access, as well as flags.

@@ -29,11 +29,11 @@ export class MouseGuardConfig {
     };
 
     static readonly abilities: StringMap = {
-        nature: "MOUSEGUARD.NatureStr",
-        will: "MOUSEGUARD.WillStr",
-        health: "MOUSEGUARD.HealthStr",
-        resources: "MOUSEGUARD.ResourcesStr",
-        circles: "MOUSEGUARD.CirclesStr",
+        nature: "MOUSEGUARD.AbilityMouseNature",
+        will: "MOUSEGUARD.AbilityWill",
+        health: "MOUSEGUARD.AbilityHealth",
+        resources: "MOUSEGUARD.AbilityResources",
+        circles: "MOUSEGUARD.AbilityCircles",
     }
 
     static readonly wises: StringMap = {
@@ -41,17 +41,17 @@ export class MouseGuardConfig {
     }
 
     static readonly skills: StringMap = {
-        fighter: "MOUSEGUARD.FighterStr",
-        healer: "MOUSEGUARD.HealerStr",
-        hunter: "MOUSEGUARD.HunterStr",
-        instructor: "MOUSEGUARD.InstructorStr",
-        pathfinder: "MOUSEGUARD.PathfinderStr",
-        scout: "MOUSEGUARD.ScoutStr",
-        survivalist: "MOUSEGUARD.SurvivalistStr",
-        weatherWatcher: "MOUSEGUARD.WeatherWatcherStr",
-        manipulator: "MOUSEGUARD.ManipulatorStr",
-        orator: "MOUSEGUARD.OratorStr",
-        persuader: "MOUSEGUARD.PersuaderStr",
+        fighter: "MOUSEGUARD.SkillFighter",
+        healer: "MOUSEGUARD.SkillHealer",
+        hunter: "MOUSEGUARD.SkillHunter",
+        instructor: "MOUSEGUARD.SkillInstructor",
+        pathfinder: "MOUSEGUARD.SkillPathfinder",
+        scout: "MOUSEGUARD.SkillScout",
+        survivalist: "MOUSEGUARD.SkillSurvivalist",
+        weatherWatcher: "MOUSEGUARD.SkillWeatherWatcher",
+        manipulator: "MOUSEGUARD.SkillManipulator",
+        orator: "MOUSEGUARD.SkillOrator",
+        persuader: "MOUSEGUARD.SkillPersuader",
     }
 
     static readonly traits: StringMap = {
