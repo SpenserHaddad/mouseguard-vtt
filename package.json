@@ -7,7 +7,8 @@
   "description": "A system for playing the Mouseguard system in Foundry Virtual Tabletop.",
   "scripts": {
     "build": "gulp build",
-    "update": "gulp update"
+    "update": "gulp update",
+    "watch": "gulp watch"
   },
   "devDependencies": {
     "@league-of-foundry-developers/foundry-vtt-types": "^0.8.8-8",
