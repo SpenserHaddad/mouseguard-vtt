@@ -1,4 +1,4 @@
-import { MouseguardActor } from "../actor/actor";
+import { MgActor } from "../actor/actor";
 import { MouseGuardConfig } from "../helpers/config.js";
 
 export class MouseguardActorSheet extends ActorSheet {
@@ -28,18 +28,18 @@ export class MouseguardActorSheet extends ActorSheet {
             return context;
 
         // Use a safe clone of the actor data for further operations.
-        const actor = context.actor as MouseguardActor;
-        if (actor.data._source.type === "character") {
-            actor.data._source.data.background.name;
-        }
+        const actor = context.actor as MgActor;
+        // if (actor.data._source.type === "character") {
+        //     actor.data._source.data.background.name;
+        // }
 
-        const actorData = actor.data._source.data;
+        const actorData = <MgActor>actor.data._source.data;
         const background = actorData.background;
         const abilities = actorData.abilities;
         const skills = actorData.skills;
 
         // Add metadata about character traits
-        for (let [bgPropName, bgProp] of Object.entries(background)) {
+        for (const [bgPropName, bgProp] of Object.entries(background)) {
             console.log(`Setting label for ${bgPropName}`);
             bgProp.label = game.i18n.localize(MouseGuardConfig.background[bgPropName]);
         }
@@ -54,7 +54,7 @@ export class MouseguardActorSheet extends ActorSheet {
 
         // Add the actor's data to context.data for easier access, as well as flags.
         context.data = { ...context.data, ...actorData };
-        console.log(context.data)
+        // console.log(context.data) 
         context.cssClass = actor.isOwner ? "editable" : "locked"
 
         return context;
