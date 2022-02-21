@@ -23,9 +23,9 @@ export class MouseGuardConfig {
     };
 
     static readonly characteristics: StringMap = {
-        belief: "MOUSEGUARD.BeliefStr",
-        goal: "MOUSEGUARD.GoalStr",
-        instinct: "MOUSEGUARD.InstinctStr",
+        belief: "MOUSEGUARD.CharacteristicBelief",
+        goal: "MOUSEGUARD.CharacteristicGoal",
+        instinct: "MOUSEGUARD.CharacteristicInstinct",
     };
 
     static readonly abilities: StringMap = {
