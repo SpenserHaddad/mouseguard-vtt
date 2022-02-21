@@ -1,9 +1,9 @@
 {
     "include": [
-        "src/module/**/*",
-        "./gulpfile.ts"
+        "src/module/**/*"
     ],
     "compilerOptions": {
+        "outDir": "dist/module/",
         "types": [
             "node",
             "@league-of-foundry-developers/foundry-vtt-types"
@@ -19,6 +19,8 @@
             "ES2018",
             "ES2020",
             "ES2021"
-        ]
+        ],
+        "incremental": true,
+        "tsBuildInfoFile": "tsconfig.tsbuildinfo"
     }
 }

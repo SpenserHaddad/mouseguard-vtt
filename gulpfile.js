@@ -1,14 +1,13 @@
-const dotenv = require('dotenv')
-const gulp = require('gulp')
-const prefix = require('gulp-autoprefixer')
-const ts = require('gulp-typescript');
+const dotenv = require('dotenv');
+const gulp = require('gulp');
+const prefix = require('gulp-autoprefixer');
 const sass = require('gulp-sass')(require('sass'));
+const { exec } = require('child_process')
 
-const project = ts.createProject('tsconfig.json');
 dotenv.config()
 
 // Small error handler helper function.
-function handleError(err: Error) {
+function handleError(err) {
     console.log(err.toString());
     this.emit('end');
 }
@@ -16,10 +15,9 @@ function handleError(err: Error) {
 const SYSTEM_SCSS = "src/scss/**/*.scss";
 
 function compileTs() {
-    return gulp.src('src/**/*.ts')
-        .pipe(project())
-        .pipe(gulp.dest('dist/'))
-
+    // This is significantly faster on subsequent builds than gulp-typescript
+    // or other packages which don't properly handle incremental builds for TS.
+    return exec("npx tsc")
 }
 
 function compileScss() {
@@ -37,18 +35,19 @@ function compileScss() {
 }
 
 function copyToDist() {
-    const sinceLastRun = { since: gulp.lastRun(copyToDist) }
-    return new Promise<void>((resolve, reject) => {
-        gulp.src("README.md", sinceLastRun).pipe(gulp.dest("dist/"))
-        gulp.src("src/system.json", sinceLastRun).pipe(gulp.dest("dist/"))
-        gulp.src("src/template.json", sinceLastRun).pipe(gulp.dest("dist/"))
-        gulp.src("src/fonts/**", sinceLastRun).pipe(gulp.dest("dist/fonts/"))
-        gulp.src("src/lang/**", sinceLastRun).pipe(gulp.dest("dist/lang/"))
-        gulp.src("src/module/**", sinceLastRun).pipe(gulp.dest("dist/module/"))
-        gulp.src("src/packs/**", sinceLastRun).pipe(gulp.dest("dist/packs/"))
-        gulp.src("src/templates/**", sinceLastRun).pipe(gulp.dest("dist/templates/"))
-        resolve();
-    })
+    const watches = [
+        "src/system.json",
+        "src/template.json",
+        "src/fonts/**",
+        "src/lang/**",
+        "src/packs/**",
+        "src/templates/**",
+    ]
+
+    const getDistPath = (p) => {
+        return p.dirname.replace("src", "dist")
+    }
+    return gulp.src(watches).pipe(gulp.dest(getDistPath));
 }
 
 // This is supposed to copy the dist folder into the modules directory for testing. 
@@ -73,7 +72,6 @@ const update = gulp.series(build, "foundry")
 const watch = function () {
     gulp.watch("src/", update)
 }
-console.log(watch)
 exports.build = build
 exports.update = update
 exports.watch = watch
