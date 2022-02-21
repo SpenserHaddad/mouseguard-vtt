@@ -37,6 +37,7 @@ $border-groove: 2px groove #eeede0;
 }
 
 .mouseguard ul.abilities {
+  display: inline-flex;
   flex: 0 0 175px;
   list-style: none;
   margin: 0;
@@ -106,6 +107,21 @@ $border-groove: 2px groove #eeede0;
     }
 }
 
+.mouseguard div.charRow {
+  align-items: center;
+  textarea {
+    font-size: 0.7em;
+    font-family: 'TiePoloStd-Book';
+  }
+  .charName {
+    max-width: 13%;
+  }
+  .charInput {
+    font-size: 0.8em;
+  }
+  margin-top: 5px;
+}
+
 .mouseguard ul.skills {
   flex: 0 0 200px;
   list-style: none;
@@ -120,7 +136,7 @@ $border-groove: 2px groove #eeede0;
 
   span.skill-title {
     text-align: center;
-    top: 50%;
+    top: 52%;
     margin: 2px 4px;
     // border-bottom: 1px solid #c9c7b8;
   }

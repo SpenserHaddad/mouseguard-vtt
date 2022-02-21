@@ -4,44 +4,49 @@
         <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
         <div class="header-fields">
 
-            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Guard Name" </h1>
+            <h3 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Guard Name" /></h3>
 
+            {{#each data.characteristics as |chInfo key|}}
+            <div class="flexrow charRow">
+                <div class="charName">{{chInfo.label}}: </div>
+                <input class="charInput" type="text" name="data.characteristics.{{key}}.value"
+                    value="{{chInfo.value}}" />
+            </div>
+            {{/each}}
         </div>
     </header>
 
     {{!-- Sheet Tabs --}}
     <nav class="sheet-tabs tabs" data-group="primary">
         <a class="item" data-tab="main">Main</a>
-        <a class="item" data-tab="background">Background</a>
+        <a class="item" data-tab="background">BG</a>
     </nav>
 
     {{!-- Background Tab --}}
     <section class="sheet-body">
-        <div class="tab main flexrow" data-tab="main">
+        <div class="tab main flexcol" data-tab="main">
             <ul class="abilities">
                 {{#each data.abilities as |abInfo key|}}
                 <li class="ability-entry">
                     <h3 class="ability-title">{{abInfo.label}}</h4>
-                        <div class="flexrow">
-                            <input class="ability-value" type="number" name="data.abilities.{{key}}.value"
+                        <div class="flexcol">
+                            <input class=" ability-value" type="number" name="data.abilities.{{key}}.value"
                                 value="{{abInfo.value}}" data-dtype="Number" />
                             {{!-- Passes and Fails for the ability --}}
-                            <div class="advancements flexcol">
-                                <div class="flexrow">
-                                    <span class="advancement-label">{{localize 'MOUSEGUARD.AdvancementPass'}}:</span>
-                                    <input class="advancement-value" type="text" data-dtype="Number"
-                                        value="{{abInfo.passes.value}}" />
-                                    <span class="advancement-sep">/</span>
-                                    <span class="advancement-total">{{abInfo.passes.total}}</span>
-                                </div>
-                                <div class="flexrow">
-                                    <span class="advancement-label">{{localize 'MOUSEGUARD.AdvancementFail'}}:</span>
-                                    <input class="advancement-value" type="text" data-dtype="Number"
-                                        value="{{abInfo.fails.value}}" />
-                                    <span class="advancement-sep">/</span>
-                                    <span class="advancement-total">{{abInfo.fails.total}}</span>
-                                </div>
+                            <div class="flexrow">
+                                <span class="advancement-label">{{localize 'MOUSEGUARD.AdvancementPass'}}:</span>
+                                <input class="advancement-value" type="text" data-dtype="Number"
+                                    value="{{abInfo.passes.value}}" />
+                                <span class="advancement-sep">/</span>
+                                <span class="advancement-total">{{abInfo.passes.total}}</span>
                             </div>
+                        </div>
+                        <div class="flexrow">
+                            <span class="advancement-label">{{localize 'MOUSEGUARD.AdvancementFail'}}:</span>
+                            <input class="advancement-value" type="text" data-dtype="Number"
+                                value="{{abInfo.fails.value}}" />
+                            <span class="advancement-sep">/</span>
+                            <span class="advancement-total">{{abInfo.fails.total}}</span>
                         </div>
                 </li>
                 {{/each}}
