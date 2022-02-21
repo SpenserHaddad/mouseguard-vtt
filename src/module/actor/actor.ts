@@ -2,6 +2,7 @@ import { MouseGuardConfig } from "../helpers/config.js";
 
 export class MgActor extends Actor {
     background: MgActorBackground;
+    characteristics: MgActorCharacteristics;
     abilities: MgActorAbilities;
     skills: MgActorSkills;
 }
@@ -12,6 +13,16 @@ export class MgActorSkills {
 
 export class MgActorAbilities {
 
+}
+
+export class MgActorCharacteristics {
+    belief: MgActorStrProp;
+    goal: MgActorStrProp;
+    instinct: MgActorStrProp;
+
+    get allProperties(): MgActorProp[] {
+        return [this.belief, this.goal, this.instinct]
+    }
 }
 
 export class MgActorBackground {
