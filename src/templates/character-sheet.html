@@ -36,17 +36,17 @@
                             <div class="flexrow">
                                 <span class="advancement-label">{{localize 'MOUSEGUARD.AdvancementPass'}}:</span>
                                 <input class="advancement-value" type="text" data-dtype="Number"
-                                    value="{{abInfo.passes.value}}" />
+                                    value="{{abInfo.passes}}" />
                                 <span class="advancement-sep">/</span>
-                                <span class="advancement-total">{{abInfo.passes.total}}</span>
+                                <span class="advancement-total">{{abInfo.passesNeeded}}</span>
                             </div>
                         </div>
                         <div class="flexrow">
                             <span class="advancement-label">{{localize 'MOUSEGUARD.AdvancementFail'}}:</span>
                             <input class="advancement-value" type="text" data-dtype="Number"
-                                value="{{abInfo.fails.value}}" />
+                                value="{{abInfo.failures}}" />
                             <span class="advancement-sep">/</span>
-                            <span class="advancement-total">{{abInfo.fails.total}}</span>
+                            <span class="advancement-total">{{abInfo.failuresNeeded}}</span>
                         </div>
                 </li>
                 {{/each}}
@@ -64,17 +64,17 @@
                                 <span class="advancement-label-short">{{localize
                                     'MOUSEGUARD.AdvancementPassShort'}}:</span>
                                 <input class="advancement-value" type="text" data-dtype="Number"
-                                    value="{{skillInfo.passes.value}}" />
+                                    value="{{skillInfo.passes}}" />
                                 <span class="advancement-sep">/</span>
-                                <span class="advancement-total">{{skillInfo.passes.total}}</span>
+                                <span class="advancement-total">{{skillInfo.passesNeeded}}</span>
                             </div>
                             <div class="flexrow">
                                 <span class="advancement-label-short">{{localize
                                     'MOUSEGUARD.AdvancementFailShort'}}:</span>
                                 <input class="advancement-value" type="text" data-dtype="Number"
-                                    value="{{skillInfo.fails.value}}" />
+                                    value="{{skillInfo.failures}}" />
                                 <span class="advancement-sep">/</span>
-                                <span class="advancement-total">{{skillInfo.fails.total}}</span>
+                                <span class="advancement-total">{{skillInfo.failuresNeeded}}</span>
                             </div>
                         </div>
                     </div>
