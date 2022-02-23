@@ -5,7 +5,7 @@
     "version": "0.0.1",
     "author": "Spenser Haddad",
     "minimumCoreVersion": "0.8.8",
-    "compatibleCoreVersion": "0.8.9",
+    "compatibleCoreVersion": "9",
     "esmodules": [
         "module/mouseguard.js"
     ],
