@@ -1,6 +1,57 @@
 import { MouseGuardConfig } from "../helpers/config.js";
 
 export class MgActor extends Actor {
+    prepareData(): void {
+        super.prepareData();
+    }
+
+    prepareBaseData(): void {
+    }
+
+    prepareDerivedData(): void {
+        if (!(this.data.data instanceof MgActorData)) {
+            let actorData = actorDataToMgData(this.data.data);
+            this.data.data = actorData;
+        }
+    }
+}
+
+function actorDataToMgData(obj: any): MgActorData {
+    const objData = obj as { [k: string]: any };
+    let actorData = new MgActorData()
+
+    // Trust the JSON entries and allProperties entries are in the same order
+    const objAbilities: any[] = Object.values(objData.abilities);
+    for (var [idx, actorAbility] of actorData.abilities.allProperties.entries()) {
+        const objAbility = objAbilities[idx];
+        actorAbility.value = objAbility.value;
+        actorAbility.passes = objAbility.passes;
+        actorAbility.failures = objAbility.failures;
+    }
+
+    const objBackgrounds: any[] = Object.values(objData.background);
+    for (var [idx, actorBackground] of actorData.background.allProperties.entries()) {
+        const objBackground = objBackgrounds[idx];
+        actorBackground.value = objBackground.value;
+    }
+
+    const objChars: any[] = Object.values(objData.characteristics);
+    for (var [idx, actorChar] of actorData.characteristics.allProperties.entries()) {
+        const objChar = objChars[idx];
+        actorChar.value = objChar.value;
+    }
+
+    const objSkills: any[] = Object.values(objData.skills);
+    for (var [idx, actorSkill] of actorData.skills.allProperties.entries()) {
+        const objSkill = objSkills[idx];
+        actorSkill.value = objSkill.value;
+        actorSkill.passes = objSkill.passes;
+        actorSkill.failures = objSkill.failures;
+    }
+    return actorData;
+}
+
+export class MgActorData {
     abilities = new MgActorAbilities();
     background = new MgActorBackground();
     characteristics = new MgActorCharacteristics();

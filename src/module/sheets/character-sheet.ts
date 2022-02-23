@@ -1,5 +1,4 @@
-import { MgActor, MgActorProp } from "../actor/actor";
-import { MouseGuardConfig } from "../helpers/config.js";
+import { MgActor, MgActorData } from "../actor/actor.js";
 
 export class MouseguardActorSheet extends ActorSheet {
     static get defaultOptions(): ActorSheet.Options {
@@ -31,33 +30,26 @@ export class MouseguardActorSheet extends ActorSheet {
         // if (actor.data._source.type === "character") {
         //     actor.data._source.data.background.name;
         // }
+        const actorData = <MgActorData>actor.data.data;
+        for (let abProp of actorData.abilities.allProperties) {
+            abProp.label = game.i18n.localize(abProp.configName);
+        }
 
-        const actorData = <MgActor>actor.data._source.data;
-        const background = actorData.background;
-        const characteristics = actorData.characteristics
-        const abilities = actorData.abilities;
-        const skills = actorData.skills;
-
-        // Add metadata about character traits
-        for (const bgProp of Object.values(background)) {
+        for (let bgProp of actorData.background.allProperties) {
             bgProp.label = game.i18n.localize(bgProp.configName);
         }
 
-        for (const chProp of Object.values(characteristics)) {
+        for (let chProp of actorData.characteristics.allProperties) {
             chProp.label = game.i18n.localize(chProp.configName);
         }
 
-        for (let [abPropName, abProp] of Object.entries(abilities)) {
-            abProp.label = game.i18n.localize(MouseGuardConfig.abilities[abPropName]);
-        }
-
-        for (let [skillPropName, skillProp] of Object.entries(skills)) {
-            skillProp.label = game.i18n.localize(MouseGuardConfig.skills[skillPropName]);
+        for (let skillProp of actorData.skills.allProperties) {
+            skillProp.label = game.i18n.localize(skillProp.configName);
         }
 
         // Add the actor's data to context.data for easier access, as well as flags.
         context.data = { ...context.data, ...actorData };
-        // console.log(context.data) 
+        console.log(context.data);
         context.cssClass = actor.isOwner ? "editable" : "locked"
         return context;
     }
