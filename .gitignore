@@ -29,3 +29,6 @@ node_modules
 
 # Ignore built ts files
 dist/**/*
+
+# Ignore .tsbuildinfo, since it's a dev-only build artifact
+*.tsbuildinfo
