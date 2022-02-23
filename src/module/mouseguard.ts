@@ -5,7 +5,7 @@ import { MouseguardActorSheet } from './sheets/character-sheet.js';
 Hooks.once('init', async function () {
     // @ts-expect-error(2339)
     game.mouseguard = {
-        MgActor: MgActor
+        MgActor
     }
     CONFIG.Actor.documentClass = MgActor;
 
