@@ -1,11 +1,12 @@
 import { MouseGuardConfig } from "../helpers/config.js";
 
 export class MgActor extends Actor {
-    background: MgActorBackground;
-    characteristics: MgActorCharacteristics;
-    abilities: MgActorAbilities;
-    skills: MgActorSkills;
+    abilities = new MgActorAbilities();
+    background = new MgActorBackground();
+    characteristics = new MgActorCharacteristics();
+    skills: MgActorSkills = new MgActorSkills();
 }
+
 // TODO: Max 24 skills
 export class MgActorSkills {
     fighter = new MgActorSkill(MouseGuardConfig.skills.fighter);
@@ -20,7 +21,7 @@ export class MgActorSkills {
     orator = new MgActorSkill(MouseGuardConfig.skills.orator);
     persuader = new MgActorSkill(MouseGuardConfig.skills.persuader);
 
-    get allProperties(): IMgActorProp[] {
+    get allProperties(): IMgActorAdvanceableProp[] {
         return [
             this.fighter,
             this.healer,
@@ -45,15 +46,15 @@ export class MgActorAbilities {
     circles = new MgActorAbility(MouseGuardConfig.abilities.circles, 1, 10);
 
 
-    get allProperties(): IMgActorProp[] {
+    get allProperties(): IMgActorAdvanceableProp[] {
         return [this.nature, this.will, this.health, this.resources, this.circles];
     }
 }
 
 export class MgActorCharacteristics {
-    belief: MgActorStrProp;
-    goal: MgActorStrProp;
-    instinct: MgActorStrProp;
+    belief = new MgActorStrProp(MouseGuardConfig.characteristics.belief);
+    goal = new MgActorStrProp(MouseGuardConfig.characteristics.goal);
+    instinct = new MgActorStrProp(MouseGuardConfig.characteristics.instinct);
 
     get allProperties(): IMgActorProp[] {
         return [this.belief, this.goal, this.instinct]
@@ -88,13 +89,23 @@ export class MgActorBackground {
 }
 
 export interface IMgActorProp {
-    label: string;
     readonly configName: string;
-
+    label: string;
+    value: string | number;
 }
 
+export interface IMgActorAdvanceableProp extends IMgActorProp {
+    passes: number;
+    get passesNeeded(): number;
 
-export class MgActorAbility implements IMgActorProp {
+    failures: number;
+    get failuresNeeded(): number;
+
+    get canAdvance(): boolean;
+    advance(): void;
+}
+
+export class MgActorAbility implements IMgActorAdvanceableProp {
     label: string;
     configName: string;
     _value: number;
@@ -158,7 +169,7 @@ export class MgActorAbility implements IMgActorProp {
         return (this.passes == this.passesNeeded) && (this.failures == this.failuresNeeded);
     }
 
-    advanceSkill(force: boolean = false) {
+    advance(force: boolean = false) {
         if (!this.canAdvance && !force) {
             throw new Error("Stat does not meet criteria for advancement.") // TODO: proper exception class
         }
@@ -175,12 +186,11 @@ export class MgActorSkill extends MgActorAbility {
     constructor(configName: string) {
         super(configName, 1, 6);
     }
-
 }
 
-export class MgActorStrProp<T = string> implements IMgActorProp {
+export class MgActorStrProp implements IMgActorProp {
     label: string;
-    value: T;
+    value: string;
     readonly configName: string
 
     constructor(configName: string) {
@@ -188,12 +198,15 @@ export class MgActorStrProp<T = string> implements IMgActorProp {
     }
 }
 
-export class MgActorBackgroundAgeProp extends MgActorStrProp<number> {
+export class MgActorBackgroundAgeProp implements IMgActorProp {
     readonly min = 0;
     readonly max = 50;
+    label: string;
+    readonly configName: string;
+    value: number;
 
     constructor(configName: string, age: number = 18) {
-        super(configName);
+        this.configName = configName;
         this.value = age;
     }
 }
