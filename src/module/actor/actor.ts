@@ -202,7 +202,8 @@ export class MgActorAbility implements IMgActorAdvanceableProp {
         if (value < 0 || value > this.failuresNeeded) {
             throw new RangeError(`Number of failures must be between 0 and ${this.failuresNeeded}`);
         }
-        this._passes = value;
+        console.log(`Setting failures to ${value}`)
+        this._failures = value;
     }
 
     get passesNeeded(): number {
@@ -210,7 +211,7 @@ export class MgActorAbility implements IMgActorAdvanceableProp {
     }
 
     get failuresNeeded(): number {
-        return this.value - 1;
+        return this.value > 0 ? this.value - 1 : 0;
     }
 
     get canAdvance(): boolean {
