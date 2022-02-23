@@ -22,27 +22,27 @@
                 "nature": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "will": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "health": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "resources": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "circles": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 }
             },
             "wises": {
@@ -52,57 +52,57 @@
                 "fighter": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "healer": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "hunter": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "instructor": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "pathfinder": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "scout": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "survivalist": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "weatherWatcher": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "manipulator": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "orator": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 },
                 "persuader": {
                     "value": 1,
                     "passes": 0,
-                    "fails": 0
+                    "failures": 0
                 }
             },
             "background": {
